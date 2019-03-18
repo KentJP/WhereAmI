@@ -21,7 +21,8 @@ import java.text.NumberFormat;
 
 public class MainActivity extends AppCompatActivity implements IViewCallBack{
 
-    private String TAG = "WAI";
+    public static String TAG = "qwerty";
+
     private int PERMISSION_REQUEST_CODE = 4;
 
     Switch swListening;
@@ -145,6 +146,7 @@ public class MainActivity extends AppCompatActivity implements IViewCallBack{
 
     protected void startListening() {
 
+        Log.d(TAG, "Start listening");
         locListener = new MyLocationListener(this);
 
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.M) {
@@ -173,6 +175,8 @@ public class MainActivity extends AppCompatActivity implements IViewCallBack{
 
     private void stopListening()
     {
+        Log.d(TAG, "Stop listening");
+
         if (locListener == null) return;
 
 

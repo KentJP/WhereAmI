@@ -8,9 +8,7 @@ import android.util.Log;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 
-/**
- * Created by ole on 05/03/15.
- */
+
 public class MyLocationListener implements LocationListener {
 
     IViewCallBack m_view;
@@ -37,6 +35,7 @@ public class MyLocationListener implements LocationListener {
     int count=0;
 
     public void onLocationChanged(Location location) {
+        Log.d(MainActivity.TAG, "Notified on onLocationChanged");
         m_view.setSpeed(location.getSpeed());
 
         m_view.setCurrentLocation(location);
